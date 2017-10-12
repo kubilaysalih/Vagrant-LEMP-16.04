@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "127.0.0.1"
+  config.vm.network :private_network, ip: "10.10.10.61"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -40,8 +40,8 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  config.vm.synced_folder "./", "/vagrant", disabled: true
-  config.vm.synced_folder "./", "/var/www", create: true, group: "www-data", owner: "www-data"
+  config.vm.synced_folder "./", "/vagrant"
+  # config.vm.synced_folder "./", "/var/www/starset", create: true, group: "www-data", owner: "www-data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -72,7 +72,8 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+
   config.vm.provision "shell" do |s|
-    s.path = ".provision/bootstrap.sh"
+    s.path = "provision/bootstrap.sh"
   end
 end

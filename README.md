@@ -1,18 +1,28 @@
 # Vagrant-LEMP-16.04
 
+## Differences From Original Repository
+
+- Default IP
+- PHP and Nginx User
+- Default Database(blogum)
+- Composer
+- Additional PHP Modules
+- Zip & Unzip
+- Folder structure
+
 ## PLEASE NOTE
 
 These is a bug in Vagrant 1.9.3 (the newest version at time of writing) which prevents this, and many other Vagrant boxes from working correctly. For now I suggest staying on 1.9.2, which you can download from the official [Vagrant Archive Page](https://releases.hashicorp.com/vagrant/?_ga=1.71162004.563489484.1490234198).
 
-## Introduction	
+## Introduction
 
 I hatched this project from need of an all-in-one Ubuntu 16.04 LEMP Vagrant Box which I could use on my projects.
 
 With this box you will get the full LEMP Stack (Ubuntu 16.04, Nginx, MySQL and PHP), all nicely configured to work properly together.
 
-- Default IP: **127.0.0.1:80**
+- Default IP: **10.10.10.61**
 - Default SSH Port: **2222**
-- Linux Login: **Ubuntu** / **vagrant**
+- Linux Login: **ubuntu** / **vagrant**
 - MySQL Login: **root** / **root**
 
 I would suggest connecting to the MySQL database using SSH Tunnel.
@@ -31,15 +41,15 @@ I would suggest connecting to the MySQL database using SSH Tunnel.
 
 ## Instructions
 
-- Edit your `hosts` file to add `127.0.0.1	projectname.vagrant` (optional)
+- Edit your `hosts` file to add `10.10.10.61	projectname.vagrant` (optional)
 
 
-- Unzip and place `vagrantfile` and the `.provision` folder into your project root.
+- Unzip and place `vagrantfile` and the `provision` folder into your project root.
 
 
-- Open a terminal window in the project root's location and `vagrant up` 
+- Open a terminal window in the project root's location and `vagrant up`
 
-- If you recieve any UAC prompts for VirtualBox, click `yes` 
+- If you recieve any UAC prompts for VirtualBox, click `yes`
 
 - Wait (maybe make an extremely quick cuppa)
 
